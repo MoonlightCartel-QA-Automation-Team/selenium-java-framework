@@ -6,6 +6,7 @@ public class BaseTest {
 
     @Test
     void sampleTest() {
-        System.out.println("CI is running tests successfully");
+       System.out.println("CI is running JUnit 5 tests successfully");
+
     }
 }
