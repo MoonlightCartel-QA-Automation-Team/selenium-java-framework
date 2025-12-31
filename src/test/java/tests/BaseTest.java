@@ -7,11 +7,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest {
+
     protected WebDriver driver;
 
     @BeforeEach
     void setUp() {
         ChromeOptions options = new ChromeOptions();
+
+        // Headless for CI stability
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
@@ -22,6 +25,8 @@ public class BaseTest {
 
     @AfterEach
     void tearDown() {
-        if (driver != null) driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
