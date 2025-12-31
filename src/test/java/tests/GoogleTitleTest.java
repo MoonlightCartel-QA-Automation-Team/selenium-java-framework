@@ -1,13 +1,13 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GoogleTitleTest extends BaseTest {
 
     @Test
-    void googleTitleShouldContainGoogle() {
-        driver.get("https://www.google.com");
-        assertTrue(driver.getTitle().toLowerCase().contains("google"));
+    void verifyExampleDotComTitle() {
+        driver.get("https://example.com");
+        assertEquals("Example Domain", driver.getTitle());
     }
 }
