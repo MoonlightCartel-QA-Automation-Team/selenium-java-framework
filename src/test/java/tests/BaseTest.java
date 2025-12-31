@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class BaseTest {
 
     protected WebDriver driver;
-
+    protected static final String BASE_URL = "https://example.com/";
     @BeforeEach
     void setUp() {
         ChromeOptions options = new ChromeOptions();
